@@ -59,7 +59,7 @@ fs.writeFileSync('user.txt',JSON.stringify(bodyobject));
 		     res.write('<title>Complete coding</title>');
 						 res.write('<body>Like/Share/Subscribe</body>');
 	res.write('</head>');
-	res.end();
+  return res.end();
 	 
 });
 
