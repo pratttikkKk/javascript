@@ -9,9 +9,13 @@
 	})
 	app.use('/product',(req,res,next)=>{
 		console.log(req.body);
-		res.send('<h1>hello from product page</h1>');
-		
+		res.redirect('/hii');
 	})
-	
+	app.use('/hii',(req,res,next)=>{
+		res.send('<h1>hii i am from add product page</h1>');
+	});
+	app.use((req,res,next)=>{
+		res.status(400).send('<h1>error found</h1>')
+	})
 	
 	app.listen(3000);
