@@ -1,12 +1,8 @@
 function App() {
-  const name = "Pratik";
 
-  return (
-    <main className="page">
-      <h1>Hello, {name}!</h1>
-      <p>Welcome to React.</p>
-    </main>
-  );
+
+  return <h1>Hello</h1>
+  
 }
 
 export default App;
