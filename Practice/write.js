@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 content = "hello student"
 
 fs.writeFile('student.txt',content ,(err)=>{
