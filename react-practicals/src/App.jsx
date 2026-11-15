@@ -1,38 +1,56 @@
 
-import React, { useState } from "react";
-import "./App.css";
+import React from "react";
 
-function Registration() {
+import {
+    Button,
+    TextField,
+    Typography,
+    Card,
+    CardContent,
+    AppBar,
+    Toolbar
+} from "@mui/material";
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+function App() {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert("Welcome " + name);
-    };
+    return (
+        <div>
 
-    {return (
-        <form onSubmit={handleSubmit}>
-            <h2>Student Registration</h2>
+            {/* 1. AppBar */}
+            <AppBar position="sticky">
+                <Toolbar>
+                    <Typography variant="h6">
+                        Student Portal
+                    </Typography>
+                </Toolbar>
+            </AppBar>
 
-            <input
-                name="name"
-                placeholder="Enter Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
+            {/* 2. Card */}
+            <Card sx={{ maxWidth: 350, margin: 5 }}>
+                <CardContent>
 
-            <input
-                name="email"
-                placeholder="Enter Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
+                    {/* 3. Typography */}
+                    <Typography variant="h5">
+                        Registration Form
+                    </Typography>
 
-            <button type="submit">Register</button>
-        </form>
+                    {/* 4. TextField */}
+                    <TextField
+                        label="Enter Name"
+                        fullWidth
+                        margin="normal"
+                    />
+
+                    {/* 5. Button */}
+                    <Button variant="contained" fullWidth>
+                        Register
+                    </Button>
+
+                </CardContent>
+            </Card>
+
+        </div>
     );
-}}
+}
 
-export default Registration;
+export default App;
