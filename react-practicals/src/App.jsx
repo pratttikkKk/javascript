@@ -1,40 +1,38 @@
 
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-class Registration extends Component {
+function Registration() {
 
-    state = {
-        name: "",
-        email: ""
-    };
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
 
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
-    };
-
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        alert("Welcome " + this.state.name);
+        alert("Welcome " + name);
     };
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <h2>Student Registration</h2>
+    {return (
+        <form onSubmit={handleSubmit}>
+            <h2>Student Registration</h2>
 
-                <input name="name" placeholder="Enter Name"
-                    value={this.state.name}
-                    onChange={this.handleChange} />
+            <input
+                name="name"
+                placeholder="Enter Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
 
-                <input name="email" placeholder="Enter Email"
-                    value={this.state.email}
-                    onChange={this.handleChange} />
+            <input
+                name="email"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
 
-                <button type="submit">Register</button>
-            </form>
-        );
-    }
-}
+            <button type="submit">Register</button>
+        </form>
+    );
+}}
 
 export default Registration;
